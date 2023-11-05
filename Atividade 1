@@ -1,0 +1,17 @@
+            # Função para verificar os números primos
+def primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n/2) + 1): 
+      if n % i == 0:
+          return False
+    return True
+
+# Usuário escolhe o intervalo
+inf = int(input('Entre com o menor valor: '))
+sup = int(input('Entre com o maior valor: '))
+print('Os primos no intervalo de {} a {} são:'.format(inf, sup))
+
+for i in range(inf, sup + 1):
+    if primo(i):
+        print(i, end=' ')
