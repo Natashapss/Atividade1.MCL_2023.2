@@ -1,0 +1,21 @@
+def elementos_em_apenas_uma_lista(lista1, lista2):
+    set1 = set(lista1)
+    set2 = set(lista2)
+
+    exclusivos_lista1 = set1 - set2
+    exclusivos_lista2 = set2 - set1
+
+    resultado = list(exclusivos_lista1 | exclusivos_lista2)
+
+    return resultado
+
+# Solicitar ao usuário que insira os números das listas
+lista1 = input("Insira os números da primeira lista separados por espaços: ").split()
+lista2 = input("Insira os números da segunda lista separados por espaços: ").split()
+
+# Converter os valores de entrada para inteiros
+lista1 = [int(x) for x in lista1]
+lista2 = [int(x) for x in lista2]
+
+resultado = elementos_em_apenas_uma_lista(lista1, lista2)
+print("Elementos presentes em apenas uma das listas:", resultado)
