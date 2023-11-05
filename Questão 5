@@ -1,0 +1,26 @@
+def encontrar_maior_menor(lista):
+    if not lista:
+        return None, None  # Retorna None se a lista estiver vazia
+
+    maior = lista[0]
+    menor = lista[0]
+
+    for num in lista:
+        if num > maior:
+            maior = num
+        if num < menor:
+            menor = num
+
+    return maior, menor
+
+# Solicitar ao usuário que insira a lista de números inteiros
+numeros = input("Insira a lista de números inteiros separados por espaços: ").split()
+numeros = [int(x) for x in numeros]
+
+maior, menor = encontrar_maior_menor(numeros)
+
+if maior is not None and menor is not None:
+    print("Maior número na lista:", maior)
+    print("Menor número na lista:", menor)
+else:
+    print("A lista está vazia.")
