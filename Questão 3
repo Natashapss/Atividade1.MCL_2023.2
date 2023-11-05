@@ -1,0 +1,23 @@
+def segundo_maior_valor(lista):
+    if len(lista) < 2:
+        return "A lista deve ter pelo menos dois elementos."
+    
+    # Inicialize os dois maiores valores com os dois primeiros elementos da lista
+    maior = max(lista[0], lista[1])
+    segundo_maior = min(lista[0], lista[1])
+
+    for num in lista[2:]:
+        if num > maior:
+            segundo_maior = maior
+            maior = num
+        elif num > segundo_maior and num != maior:
+            segundo_maior = num
+
+    return segundo_maior
+
+# Solicitar ao usuário que insira os números da lista
+numeros = input("Insira os números da lista separados por espaços: ").split()
+numeros = [int(x) for x in numeros]
+
+segundo_maior = segundo_maior_valor(numeros)
+print("O segundo maior valor na lista é:", segundo_maior)
