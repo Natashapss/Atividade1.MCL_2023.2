@@ -1,0 +1,21 @@
+def ordenar_por_nome(lista_de_pessoas):
+    # Use a função sorted para ordenar a lista de acordo com o primeiro elemento de cada tupla (o nome).
+    lista_ordenada = sorted(lista_de_pessoas, key=lambda x: x[0])
+    return lista_ordenada
+
+# Solicitar ao usuário que insira a lista de tuplas
+num_pessoas = int(input("Quantas pessoas deseja inserir? "))
+lista_de_pessoas = []
+
+for i in range(num_pessoas):
+    nome = input("Insira o nome da pessoa: ")
+    idade = int(input("Insira a idade de {}:".format(nome)))
+    lista_de_pessoas.append((nome, idade))
+
+# Chamar a função para ordenar a lista pelo nome
+lista_ordenada = ordenar_por_nome(lista_de_pessoas)
+
+# Imprimir a lista ordenada
+print("Lista ordenada pelo nome:")
+for nome, idade in lista_ordenada:
+    print(nome, idade)
